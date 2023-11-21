@@ -1,0 +1,23 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background-color:  #0D1117;
+  min-height: 100vh;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.title{
+  text-transform: uppercase;
+  
+}
+
