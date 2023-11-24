@@ -3,10 +3,10 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import './MultilineTextFields.scss';
 
-export default function MultilineTextFields({name, setName}) {
+export default function MultilineTextFields({reason, setReason}) {
   const handleChange = (event) => {
-    setName(event.target.value);
-    console.log(event.target.value)
+    setReason(event.target.value);
+    console.log(reason) //reason
   };
   return (
     <Box
@@ -22,6 +22,7 @@ export default function MultilineTextFields({name, setName}) {
           label="Причина"
           margin="normal"
           multiline
+          value={reason}
           maxRows={0}
           onChange={handleChange}
         />

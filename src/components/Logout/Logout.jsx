@@ -9,7 +9,9 @@ const LogoutButton = () => {
   }
 
   return (
+    <div className="btn-box">
    <StyledBtn action={handleChange} text={'LOG OUT'} />
+   </div>
   );
 };
 

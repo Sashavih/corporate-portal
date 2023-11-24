@@ -5,6 +5,7 @@ import User from "./components/User/User";
 import Login from "./components/Login/Login";
 import './components/User/User.scss';
 import Form from "./components/Form/Form";
+import { ContactUs } from "./components/ContactUs/ContactUs";
 
 
 function App() {
@@ -18,12 +19,14 @@ function App() {
           <User/>
         </div>
       ) : (
+        <>
         <div className="user-box">
             <User />
           <Logout />
+          </div>
           <h2 className="title">корпоративные командировки</h2>
         <Form/>
-        </div>
+        </>
       )}
     </div>
   );

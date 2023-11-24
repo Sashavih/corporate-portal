@@ -1,11 +1,19 @@
 .user-box{
-    padding: 20rem 0;
+    padding: 0.5rem 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
   }
   .title{
-    padding: 3rem;
-    font-size: 16px;
+    padding: 3rem 0.8rem;
+    font-size: 20px;
     color: rgb(231, 231, 231);
     text-transform: uppercase;
+    cursor: pointer;
+  }
+  .btn-box{
+margin: 0 1rem 0 2rem;
   }
 .loader {
     width: 48px;
@@ -17,7 +25,14 @@
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
   }
-  
+  .profile-pic{
+    max-width: 2.5rem;
+    cursor: pointer;
+    transition: 0.4s;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
   @keyframes rotation {
     0% {
       transform: rotate(0deg);

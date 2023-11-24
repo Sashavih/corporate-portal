@@ -6,13 +6,11 @@ import Select from '@mui/material/Select';
 import '../BasicDateTimePecker/BasicDateTimePicker.scss';
 import './BasicSelect.scss';
 
-export default function BasicSelect() {
-  const [name, setName] = React.useState('');
+export default function BasicSelect({name, setName}) {
+  const [value, setValue]= React.useState('');
   const handleChange = (event) => {
     setName(event.target.value);
-    console.log(event.target.value)
   };
-
   return (
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Руководитель</InputLabel>
@@ -23,9 +21,9 @@ export default function BasicSelect() {
           value={name}
           label="Руководитель"
           onChange={handleChange}>
-          <MenuItem value={1}>Антон Конов</MenuItem>
-          <MenuItem value={2}>Кто то еще</MenuItem>
-          <MenuItem value={3}>Кто то еще</MenuItem>
+          <MenuItem value={'sashavikhorevaa@gmail.com'}>Антон Конов</MenuItem>
+          <MenuItem value={'avyogaonline@gmail.com'}>Кто то еще</MenuItem>
+          <MenuItem value={'sashamaninaa@mail.ru'}>Кто то еще</MenuItem>
         </Select>
       </FormControl>
   );
