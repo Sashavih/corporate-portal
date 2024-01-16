@@ -12,9 +12,10 @@ const Login = () => {
   return (
     <div
      className="login-box">
+         <h1 className="title">Корпоративный портал</h1>
   <StyledBtn
    action={handleChange} 
-   text={'LOGIN'} />
+   text={'ВОЙТИ'} />
   </div>
 )};
 

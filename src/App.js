@@ -1,33 +1,39 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import "./App.css";
-import Logout from "./components/Logout/Logout";
-import User from "./components/User/User";
 import Login from "./components/Login/Login";
-import './components/User/User.scss';
 import Form from "./components/Form/Form";
-import { ContactUs } from "./components/ContactUs/ContactUs";
+import { Header } from "./components/Header/Header";
+import Profile from "./components/Profile/Profile";
+import User from "./components/User/User";
+import { Route, Routes, Link } from "react-router-dom"
+import Loader from "./components/Loader/Loader";
 
 
-function App() {
-  const { isAuthenticated } = useAuth0();
+function App({pressed}) {
+  const { isAuthenticated, isLoading } = useAuth0();
+  if (isLoading) {
+    return <Loader/>;
+  }
 
   return (
     <div className="App">
       {!isAuthenticated ? (
         <div>
           <Login />
-          <User/>
         </div>
       ) : (
         <>
-        <div className="user-box">
-            <User />
-          <Logout />
-          </div>
-          <h2 className="title">корпоративные командировки</h2>
-        <Form/>
+          <Header/>
+          <Routes>
+         <Route path="/" />
+        <Route path="/header" element={<Header/>} />
+        <Route path="/form"  element={<Form/>} />
+        <Route path="/profile" element={<Profile/>} />
+        {/* <Route path="*" element={<NotFoundPage />} /> */}
+      </Routes>
         </>
       )}
+        
     </div>
   );
 }
